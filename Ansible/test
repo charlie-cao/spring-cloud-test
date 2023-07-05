@@ -1,1 +1,24 @@
-Ansible
+安装 Ansible：
+
+确保您的控制节点上安装了 Python 和 pip。
+在命令行中运行 pip install ansible 命令，安装 Ansible。
+创建 Ansible 配置文件：
+
+在您的控制节点上创建一个目录，用于存放 Ansible 配置文件和 Playbooks。
+在该目录中创建一个新的文本文件，命名为 ansible.cfg，用于配置 Ansible。
+配置 Ansible 主机清单：
+
+在同一目录中创建一个名为 inventory 或 hosts 的文件，用于定义 Ansible 可管理的远程主机。
+在主机清单文件中添加远程主机的 IP 地址或主机名，按照指定的格式进行分组。
+创建 Ansible Playbook：
+
+在同一目录中创建一个新的 YAML 文件，命名为 playbook.yml（或其他你喜欢的名称），用于编写 Ansible Playbook。
+在 Playbook 中定义一系列任务和配置，以描述所需的远程主机状态。
+编写 Playbook 任务：
+
+在 Playbook 文件中使用 YAML 格式编写任务，指定需要在远程主机上执行的命令、配置或模块。
+可以定义主机、变量、任务、模块、循环等等。
+执行 Playbook：
+
+在命令行中导航到包含 Playbook 文件的目录。
+运行 ansible-playbook playbook.yml 命令，Ansible 将连接到远程主机并执行 Playbook 中定义的任务。
