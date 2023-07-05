@@ -1,1 +1,30 @@
+安装 Terraform：
 
+前往 Terraform 官方网站（https://www.terraform.io）下载适合您操作系统的安装包。
+安装 Terraform，并将其可执行文件添加到系统路径。
+创建 Terraform 配置文件：
+
+创建一个新的目录，用于存放 Terraform 配置文件。
+在该目录中创建一个新的文本文件，命名为 main.tf，用于定义 Terraform 的主要配置。
+编写基础设施配置：
+
+打开 main.tf 文件，并使用 HCL（HashiCorp Configuration Language）编写基础设施配置。
+在配置文件中指定提供商（如 AWS、Azure）和资源（如虚拟机、存储桶）等详细信息。
+初始化 Terraform：
+
+在命令行中导航到包含 Terraform 配置文件的目录。
+运行 terraform init 命令，初始化 Terraform，下载所需的提供商插件和模块。
+预览计划：
+
+运行 terraform plan 命令，Terraform 会检查配置文件并生成执行计划。
+检查生成的计划，查看将要创建、更新或删除的资源。
+应用配置：
+
+运行 terraform apply 命令，Terraform 将根据配置文件中的定义创建和管理基础设施资源。
+根据提示确认执行计划，Terraform 将开始创建资源。
+管理基础设施：
+
+在创建资源后，您可以使用 Terraform 命令进行基础设施的管理。
+运行 terraform show 命令，查看当前基础设施状态。
+运行 terraform plan 命令，检查配置文件和基础设施的差异。
+运行 terraform apply 命令，应用配置更改。
