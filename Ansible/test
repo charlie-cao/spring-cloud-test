@@ -22,3 +22,43 @@
 
 在命令行中导航到包含 Playbook 文件的目录。
 运行 ansible-playbook playbook.yml 命令，Ansible 将连接到远程主机并执行 Playbook 中定义的任务。
+
+
+以下是一个简单的 Ansible Playbook 示例，用于在远程主机上安装 Nginx 软件：
+
+yaml
+Copy code
+---
+- name: Install Nginx
+  hosts: target_hosts  # 替换为您的远程主机清单中的分组或主机名
+  become: yes         # 使用管理员权限执行任务
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+请确保您已经安装了 Ansible，并按照以下步骤运行上述 Playbook：
+
+在控制节点上创建一个目录，并将上述代码保存为 nginx.yml 文件。
+
+在同一目录中创建一个名为 inventory 或 hosts 的文件，指定要管理的远程主机。例如：
+
+csharp
+Copy code
+[target_hosts]
+192.168.0.100
+192.168.0.101
+打开终端或命令提示符，导航到包含 Playbook 文件和主机清单文件的目录。
+
+运行以下命令，执行 Playbook：
+
+Copy code
+ansible-playbook nginx.yml
+Ansible 将连接到远程主机，并执行 Playbook 中定义的任务。在此示例中，它将更新 apt 缓存并安装 Nginx 软件包。
+
+请注意，这只是一个简单示例，Ansible Playbook 的功能和复杂性可以根据需求进行扩展和定制。您可以通过添加更多任务、使用不同的模块和参数等来满足特定的自动化需求。详细了解 Ansible 的模块和功能，请参阅 Ansible 官方文档。
