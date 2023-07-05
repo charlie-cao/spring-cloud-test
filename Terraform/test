@@ -28,3 +28,63 @@
 运行 terraform show 命令，查看当前基础设施状态。
 运行 terraform plan 命令，检查配置文件和基础设施的差异。
 运行 terraform apply 命令，应用配置更改。
+
+以下是一个简单的 Terraform 配置文件示例，用于在云提供商（这里以 AWS 为例）上创建一个虚拟机实例：
+
+hcl
+Copy code
+# 设置 Terraform 的提供商和版本
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "3.56.0"
+    }
+  }
+}
+
+# 配置 AWS 提供商凭证
+provider "aws" {
+  access_key = "YOUR_AWS_ACCESS_KEY"
+  secret_access_key = "YOUR_AWS_SECRET_ACCESS_KEY"
+  region = "us-west-2"
+}
+
+# 创建虚拟机资源
+resource "aws_instance" "example" {
+  ami           = "ami-0c94855ba95c71c99"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "example-instance"
+  }
+}
+请按照以下步骤使用上述 Terraform 配置文件：
+
+在您的工作目录中创建一个新的文件，命名为 main.tf。
+
+将上述代码复制到 main.tf 文件中。
+
+将 access_key 和 secret_access_key 替换为您自己的 AWS 凭证信息。
+
+根据您的需求，可以调整 region、ami 和 instance_type 等参数。
+
+打开终端或命令提示符，导航到包含 main.tf 文件的目录。
+
+运行以下命令，初始化 Terraform：
+
+csharp
+Copy code
+terraform init
+运行以下命令，预览将要创建的资源：
+
+Copy code
+terraform plan
+确认计划中将要创建的虚拟机实例和其他资源。
+
+运行以下命令，应用配置并创建资源：
+
+Copy code
+terraform apply
+根据提示确认执行计划，Terraform 将开始创建 AWS 虚拟机实例。
+
+请注意，这只是一个简单的示例，Terraform 的功能和灵活性可根据需求进行扩展和定制。您可以通过添加更多资源定义、使用不同的提供商和模块等来满足特定的基础设施自动化需求。详细了解 Terraform 的语法和功能，请参阅 Terraform 官方文档。
