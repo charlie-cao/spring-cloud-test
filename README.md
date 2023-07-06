@@ -72,4 +72,16 @@
 运行 terraform apply 命令，应用配置并创建虚拟机。
 通过将 Terraform 和 Ansible 结合使用，您可以实现自动化地在 Hetzner Cloud 上创建虚拟机，并使用 Ansible 安装和配置 Kubernetes 多节点集群。请注意，此过程可能需要您具备一定的 Terraform 和 Ansible 的知识和经验，以适应您的特定环境和需求。建议参考 Terraform 和 Ansible 的官方文档以获取更详细的信息和指南。
 
+使用低代码来提高开发效率
+---
+https://magic-api.ssssssss.org.cn/magic/web/index.html
 
+使用ChatGTP来实现快学习
+---
+某某技术 的 应用场景
+某某技术 的 技术原理
+某某技术 的 底层原理
+
+某某技术 的 快速使用教程
+
+列个表，把某某技术替换掉。然后批量的访问chatGPT，并生成文档，部署CDN
