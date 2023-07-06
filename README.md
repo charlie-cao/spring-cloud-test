@@ -79,9 +79,15 @@ https://magic-api.ssssssss.org.cn/magic/web/index.html
 使用ChatGTP来实现快学习
 ---
 某某技术 的 应用场景
+
+
 某某技术 的 技术原理
+
+
 某某技术 的 底层原理
 
+
 某某技术 的 快速使用教程
+
 
 列个表，把某某技术替换掉。然后批量的访问chatGPT，并生成文档，部署CDN
